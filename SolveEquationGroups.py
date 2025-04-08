@@ -3,7 +3,7 @@ import pandas as pd
 from pathlib import Path
 from scipy.optimize import leastsq
 
-file = Path(r"/home/xgx/MechanismPrediction/SolveEquationGroups/dG_RS.xlsx")
+file = Path("file.xlsx") # dG_RE_num.xlsx, dG_RS_num.xlsx, dG_IP_num.xlsx
 df = pd.read_excel(file, engine="openpyxl")
 
 # Retrieve the labels of the independent variables
@@ -73,8 +73,8 @@ def solve(fixed_x_val, fixed_y_val, fixed_z_val, mechanism):
         ))
     })
 
-    results.to_csv(rf"/home/xgx/MechanismPrediction/SolveEquationGroups/solution_output_{mechanism}.csv", index=False)
-    print(f"结果已保存到 'solution_output_{mechanism}.csv'")
+    results.to_csv(f"solution_output_{mechanism}.csv", index=False)
+    print(f"The results have been saved to 'solution_output_{mechanism}.csv'")
 
 if "RE" in file.name and "RS" not in file.name and "IP" not in file.name:
     mechanism = "RE"
