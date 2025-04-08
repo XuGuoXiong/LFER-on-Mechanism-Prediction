@@ -32,6 +32,7 @@ for _, row in df.iterrows():
 
 coefficient_matrix = np.array(coefficient_matrix)
 G = np.array(G)
+G = -G
 
 # For the ternary linear equation G = L + R + N, there exists a scenario where constant values are assigned to the independent variables (L, R, N), allowing potential linear shifts in their absolute magnitudes.
 # For instance, under transformations L' = L + 10, R' = R - 3, N' = N - 3, the equation G = L' + R' + N' still holds true. Different methodologies or initial guesses may lead to variations in these constant value assignments.
@@ -78,21 +79,21 @@ def solve(fixed_x_val, fixed_y_val, fixed_z_val, mechanism):
 
 if "RE" in file.name and "RS" not in file.name and "IP" not in file.name:
     mechanism = "RE"
-    fixed_x_val = -83.6645139058837
-    fixed_y_val = -53.9781838108333
-    fixed_z_val = 17.3958610938274
+    fixed_x_val = 83.6645139058837
+    fixed_y_val = 53.9781838108333
+    fixed_z_val = -17.3958610938274
     solve(fixed_x_val, fixed_y_val, fixed_z_val, mechanism)
 elif "RS" in file.name and "RE" not in file.name and "IP" not in file.name:
     mechanism = "RS"
-    fixed_x_val = -40.2591628371676
-    fixed_y_val = -11.3134219163921
-    fixed_z_val = -62.2725422247131
+    fixed_x_val = 40.2591628371676
+    fixed_y_val = 11.3134219163921
+    fixed_z_val = 62.2725422247131
     solve(fixed_x_val, fixed_y_val, fixed_z_val, mechanism)
 elif "IP" in file.name and "RE" not in file.name and "RS" not in file.name:
     mechanism = "IP"
-    fixed_x_val = -56.6284566174279
-    fixed_y_val = -73.543980361312
-    fixed_z_val = -5.06948540812359
+    fixed_x_val = 56.6284566174279
+    fixed_y_val = 73.543980361312
+    fixed_z_val = 5.06948540812359
     solve(fixed_x_val, fixed_y_val, fixed_z_val, mechanism)
 else:
     print("Need formatted input file.")
