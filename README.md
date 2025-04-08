@@ -11,7 +11,7 @@ The code in this folder requires the following Python libraries:
 
 ## Usage
 1. Solve_Equation_Groups.py: Python code for solving systems of equations using the least squares method, which is used to fit the reactivity parameters for each reaction component from the free energy barriers obtainable in the initial set (for details, see the article).
-Input file examples: 
+Input file examples: dG_RE_num.xlsx, dG_RS_num.xlsx, dG_IP_num.xlsx (in )
 Before using this script, you need to provide a formatted data file (in xlsx format) of free energy barriers within the initial set: the first column should contain the name or serial number of the ligand, the second column should contain the name or serial number of the radical, the third column should contain the name or serial number of the nucleophile, and the fourth column should contain the values of the free energy barrier corresponding to a specific bond formation mechanism for that ligand-radical-nucleophile combination. Note that a single list should only contain free energy data for one type of bond formation mechanism; and if the free energy barrier for a certain combination is not available (for example, because its transition state is hard to be located), the value for that entry should be NaN (not "-" or "None", etc.).
 
 2. Multiple_Linear_Regression.py: Python code for multiple linear regression, used to establish a fit between reactivity parameters and physico-organic parameters.
