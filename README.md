@@ -23,7 +23,7 @@ The code in this folder requires the following Python libraries:
 
 Before using this script, you need to provide a formatted data file (in xlsx format) of free energy barriers within the initial set: the first column should contain the name or serial number of the ligand, the second column should contain the name or serial number of the radical, the third column should contain the name or serial number of the nucleophile, and the fourth column should contain the values of the free energy barrier corresponding to a specific bond formation mechanism for that ligand-radical-nucleophile combination. Note that a single list should only contain free energy data for one type of bond formation mechanism; and if the free energy barrier for a certain combination is not available (for example, because its transition state is hard to be located), the value for that entry should be NaN (not "-" or "None", etc.).
 
-2. Multiple Linear Regression:
+2. Multivariate Linear Regression:
 
 - Seach for the best model: "MLR_on_R_IP_search.ipynb" is the Python notebook for searching and estimating MLR models, used to establish a fit between reactivity parameters and physical organic parameters. The performance of each MLR model is estimated under loo-cv.
 - KFold-cv and loo-cv: "MLR_on_R_IP_kfold_vs_loo.ipynb" is the Python notebook for comparing kFold-cv and loo-cv.
@@ -43,3 +43,4 @@ Before using this script, you need to provide a formatted data file (in xlsx for
 - Calculation Results under Different DFT Functionals: All DFT calculation results under different functionals are displayed in the file "Calculation_Results_under_Different_DFT_Functionals.xlsx". Corresponding to Supplementary Table 8 in the Supplementary Information.
 - Solvent Effect: DFT calculation results with different solvents are displayed in the file "Solvent_Effect.xlsx". Corresponding to Supplementary Table 9 in the Supplementary Information.
 - Optimal Reference for LFERs: The source data of evaluating the optimal reference for LFERs is displayed in the files "Evaluating_the_Optimal_Reference_RE", "Evaluating_the_Optimal_Reference_RS", and "Evaluating_the_Optimal_Reference_IP". Corresponding to Supplementary Table 17 in the Supplementary Information.
+
